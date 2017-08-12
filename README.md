@@ -1,2 +1,2 @@
 # WhatHaveWeDone
-documentation is on done.lefty.cf
+documentation, rules, info, and the actual project is located at https://whwd.scratchat.club/
