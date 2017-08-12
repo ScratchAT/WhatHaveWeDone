@@ -13,9 +13,14 @@ div.inst {
 
 <script>
   var socket = io();
-  socket.on("inject", function(reply) {
-    eval(reply);
-  });
+/*
+
+Now, All we do, is work on this file
+nothing else.
+Can we do it?
+
+- Lefty
+*/
 
 var online = 0;
 socket.on("online", function(msg) {
