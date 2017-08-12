@@ -5,10 +5,10 @@ div.inst {
 }
 </style>
 <center>
-  <h1>Why Did I Make This 2.0</h1>
-  <h3>Collaborate on something amazing!</h3>
+  <h1>Why Did We Make This</h1>
+  <h3>Open Source, Open Everything, socket.io collab</h3>
+  <a href='https://github.com/ScratchAT/WhatHaveWeDone/'>The Repo</a>
 <br><br>
-<font  id='ol' color='lightgray'>Users Online: N/A<font>
 </center>
 
 <script>
@@ -17,8 +17,8 @@ div.inst {
     eval(reply);
   });
 
-
+var online = 0;
 socket.on("online", function(msg) {
-document.getElementById("ol").innerHTML = "Users Online: " + msg;
+online = msg;
 });
 </script>
