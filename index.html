@@ -1,14 +1,45 @@
 <script src="/socket.io/socket.io.js"></script>
 <style>
+@import url('https://fonts.googleapis.com/css?family=Roboto'); /* font by Google @ https://fonts.google.com/specimen/Roboto?selection.family=Roboto*/
+
+
+
+* {					/* Makes navbar work properly */
+
+	font-family: 'Roboto', sans-serif;
+}
+
 div.inst {
-  border: 1px solid gray
+  border: 1px solid gray;
+  border-radius: 10px;
+  margin: 5%;
+  padding: 0.5%;
+}
+hr {
+  border: 1.5px solid black;
 }
 </style>
 <center>
   <h1>Why Did We Make This</h1>
   <h3>Open Source, Open Everything, socket.io collab</h3>
   <a href='https://github.com/ScratchAT/WhatHaveWeDone/'>The Repo</a>
+</li>
+<div class='inst'>
+  <h2>Why Did We Make This Documentation</h2>
+  <hr>
+  <b>What is the purpose of this?</b>
+  <li>This is a way for everyone on ScratchAT to collaborate to make an amazing project using the most basic node.js/socket.io server ever</li>
 <br><br>
+  <b>how does it work?</b>
+    <li>The program works by people editing index.html</li>
+    <li>Whenever it is edited, users will recieve the new file when they reload</li>
+    <li>The server will just relay any socket emitted message to everyone</li>
+    <br><br>
+    <b>What are the rules?</b>
+    <li>Be nice, this is supposed to be a collaboration, not a "Who Can Redirect To The Most Viruses"</li>
+    <li>Work together, we have a gitter <a href='https://gitter.im/Scratch-AT/WhatHaveWeDone'>https://gitter.im/Scratch-AT/WhatHaveWeDone</a></li>
+    <li>Dont commit without testing/asking others to review your code, this is a collab, not your own project</li>
+</div>
 </center>
 
 <script>

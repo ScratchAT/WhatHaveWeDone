@@ -1,3 +1,17 @@
+/*
+
+__        __  _               _     _   _                         __        __         ____
+\ \      / / | |__     __ _  | |_  | | | |   __ _  __   __   ___  \ \      / /   ___  |  _ \    ___    _ __     ___
+ \ \ /\ / /  | '_ \   / _` | | __| | |_| |  / _` | \ \ / /  / _ \  \ \ /\ / /   / _ \ | | | |  / _ \  | '_ \   / _ \
+  \ V  V /   | | | | | (_| | | |_  |  _  | | (_| |  \ V /  |  __/   \ V  V /   |  __/ | |_| | | (_) | | | | | |  __/
+   \_/\_/    |_| |_|  \__,_|  \__| |_| |_|  \__,_|   \_/    \___|    \_/\_/     \___| |____/   \___/  |_| |_|  \___|
+
+
+   What.js: There is no point of editing this file, This is meant just to emit whatever is recieved.
+            No edit done to this file will be used in production
+*/
+
+
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
