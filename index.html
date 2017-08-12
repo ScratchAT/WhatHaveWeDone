@@ -1,0 +1,24 @@
+<script src="/socket.io/socket.io.js"></script>
+<style>
+div.inst {
+  border: 1px solid gray
+}
+</style>
+<center>
+  <h1>Why Did I Make This 2.0</h1>
+  <h3>Collaborate on something amazing!</h3>
+<br><br>
+<font  id='ol' color='lightgray'>Users Online: N/A<font>
+</center>
+
+<script>
+  var socket = io();
+  socket.on("inject", function(reply) {
+    eval(reply);
+  });
+
+
+socket.on("online", function(msg) {
+document.getElementById("ol").innerHTML = "Users Online: " + msg;
+});
+</script>
