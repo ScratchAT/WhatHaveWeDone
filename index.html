@@ -1,0 +1,17 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+<script>
+  var socket = io();
+/*
+
+Now, All we do, is work on this file
+nothing else.
+Can we do it?
+
+- Lefty
+*/
+
+var online = 0;
+socket.on("online", function(msg) {
+online = msg;
+});
+</script>
