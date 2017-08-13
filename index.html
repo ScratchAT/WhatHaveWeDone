@@ -1,17 +1,23 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+</head>
+<body>
+  <h1>People Online:<span id="online"></span></h1>
 <script>
-  var socket = io();
-/*
+    var socket = io();
+  /*
 
-Now, All we do, is work on this file
-nothing else.
-Can we do it?
+  Now, All we do, is work on this file
+  nothing else.
+  Can we do it?
 
-- Lefty
-*/
+  - Lefty
+  */
 
-var online = 0;
-socket.on("online", function(msg) {
-online = msg;
-});
+  var online = 0;
+  socket.on("online", function(msg) {
+  online = msg;
+  document.getElementById("online").innerHTML=msg.toString();
+  });
 </script>
+</body>
