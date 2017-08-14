@@ -1,48 +1,48 @@
-<!DOCTYPE html>
-<head>
-  <title> What Have We Done (WHWD)</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
-  <style>
-    body {
-      background-image: url:("https://media.giphy.com/media/buVz4N0U5xIas/giphy.gif");
-    textarea.pubtext {
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-</head>
-<body>
-  <h1>People Online:<span id="online"></span></h1>
-  <textarea id="pubtext"></textarea>
-  <button type="button"
-onclick="socket.emit('announcement', document.getElementById('pubtext').value);">
-    Send Message
-    </button>
-<script>
-    var socket = io();
-  /*
-
-  Now, All we do, is work on this file
-  nothing else.
-  Can we do it?
-
-  - Lefty
-  */
-
-  window.addEventListener("load",function() {
-    var online = 0;
-    socket.on("online", function(msg) {
-      online = msg;
-      document.getElementById("online").innerHTML=msg.toString();
-    });
-    socket.on("pubtextchange",function(msg) {
-      document.getElementById("pubtext").value=msg.value
-    });
-    pubtext.addEventListener("change",function() {
-      socket.emit("pubtextchange",{value:document.getElementById("pubtext").value});
-    });
-  });
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>
+      What Have We Done (WHWD)
+    </title>
+    <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"
+    type="text/javascript">
 </script>
-</body>
+    <style type="text/css">
+/*<![CDATA[*/
+    body {background-image: url("http://31.media.tumblr.com/b233105b2b72aebfaa271eb2f4076b28/tumblr_mpba6j3y0t1s8b7jbo3_1280.gif");}textarea.pubtext {white-space: nowrap;text-overflow: ellipsis;}
+    /*]]>*/
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>
+        <font face="Verdana" color="light-blue">People
+        Online:<span id="online"></span></font>
+      </h1>
+    </center>
+    <center>
+      <textarea id="pubtext" rows="25" cols="100">
+</textarea>
+    </center>
+    <center>
+      <button type="button" onclick=
+      "socket.emit('announcement', document.getElementById('pubtext').value);">
+      Send Message</button>
+    </center><script type="text/javascript">
+//<![CDATA[
+    var socket = io();
+    /*
+
+    Now, All we do, is work on this file
+    nothing else.
+    Can we do it?
+
+    - Lefty
+    */
+    window.addEventListener("load",function() {var online = 0;socket.on("online", function(msg) {online = msg;document.getElementById("online").innerHTML=msg.toString();});socket.on("pubtextchange",function(msg) {document.getElementById("pubtext").value=msg.value});pubtext.addEventListener("change",function() {socket.emit("pubtextchange",{value:document.getElementById("pubtext").value});});});
+    //]]>
+    </script>
+  </body>
+</html>
