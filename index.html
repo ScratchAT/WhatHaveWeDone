@@ -13,7 +13,7 @@
   <h1>People Online:<span id="online"></span></h1>
   <textarea id="pubtext" width="500" height="500"></textarea>
   <button type="button"
-onclick="socket.emit("announcement", document.getElementById('pubtext').value);">
+onclick="socket.emit('announcement', document.getElementById('pubtext').value);">
     Send Message
     </button>
 <script>
