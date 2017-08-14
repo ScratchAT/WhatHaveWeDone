@@ -33,6 +33,7 @@
     </center><script type="text/javascript">
 //<![CDATA[
     var socket = io();
+
     /*
 
     Now, All we do, is work on this file
@@ -41,7 +42,25 @@
 
     - Lefty
     */
-    window.addEventListener("load",function() {var online = 0;socket.on("online", function(msg) {online = msg;document.getElementById("online").innerHTML=msg.toString();});socket.on("pubtextchange",function(msg) {document.getElementById("pubtext").value=msg.value});pubtext.addEventListener("change",function() {socket.emit("pubtextchange",{value:document.getElementById("pubtext").value});});});
+
+    window.addEventListener("load", function() {
+      var online = 0;
+
+      socket.on("online", function(msg) {
+        online = msg;
+        document.getElementById("online").innerHTML = msg.toString();
+      });
+
+      socket.on("pubtextchange", function(msg) {
+        document.getElementById("pubtext").value = msg.value
+      });
+
+      pubtext.addEventListener("change", function() {
+        socket.emit("pubtextchange", {
+          value: document.getElementById("pubtext").value
+        });
+      });
+    });
     //]]>
     </script>
   </body>
