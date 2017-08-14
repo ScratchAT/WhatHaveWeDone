@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <head>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 </head>
 <body>
   <h1>People Online:<span id="online"></span></h1>
+  <textarea id="pubtext" width="500" height="500"></textarea>
 <script>
     var socket = io();
   /*
@@ -14,10 +16,18 @@
   - Lefty
   */
 
-  var online = 0;
-  socket.on("online", function(msg) {
-  online = msg;
-  document.getElementById("online").innerHTML=msg.toString();
+  window.addEventListener("load",function() {
+    var online = 0;
+    socket.on("online", function(msg) {
+      online = msg;
+      document.getElementById("online").innerHTML=msg.toString();
+    });
+    socket.on("pubtextchange",function(msg) {
+      document.getElementById("pubtext").value=msg.value
+    });
+    pubtext.addEventListener("change",function() {
+      socket.emit("pubtextchange",{value:document.getElementById("pubtext").value});
+    });
   });
 </script>
 </body>
