@@ -3,15 +3,19 @@
   <title> What Have We Done (WHWD)</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
   <style>
-    textarea {
+    body {
+      background-image: url:("https://media.giphy.com/media/buVz4N0U5xIas/giphy.gif");
+    textarea.pubtext {
       white-space: nowrap;
       text-overflow: ellipsis;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
   <h1>People Online:<span id="online"></span></h1>
-  <textarea id="pubtext" width="500" height="500"></textarea>
+  <textarea id="pubtext"></textarea>
   <button type="button"
 onclick="socket.emit('announcement', document.getElementById('pubtext').value);">
     Send Message
