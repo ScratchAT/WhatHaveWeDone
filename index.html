@@ -21,15 +21,15 @@
         <font face="Verdana" color="light-blue">People
         Online:<span id="online"></span></font>
       </h1>
-    </center>
-    <center>
-      <textarea id="pubtext" rows="25" cols="100">
-</textarea>
-    </center>
-    <center>
-      <button type="button" onclick=
-      "socket.emit('announcement', document.getElementById('pubtext').value);">
-      Send Message</button>
+      <textarea id="pubtext" rows="25" cols="100"></textarea>
+      <p>
+        <button type="button" onclick=
+        "socket.emit('announcement', document.getElementById('pubtext').value);">
+        Send Message</button>
+      </p>
+      <p>
+        <a href="info.html">Why did we make this?</a>
+      </p>
     </center><script type="text/javascript">
 //<![CDATA[
     var socket = io();
