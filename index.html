@@ -63,7 +63,7 @@
         socket.on("pubtextchange", function(msg) {
           const notificationMsg = "There has been an update!";
 
-          if (window.Notification) {
+          if (window.Notification && document.hidden) {
             switch (Notification.permission) {
             case "default":
               Notification.requestPermission(function (perm) {
