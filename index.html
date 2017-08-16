@@ -51,9 +51,15 @@
 
         socket.on("online", function(msg) {
           online = msg;
-          document.getElementById("online").innerHTML = msg.toString();
+          document.getElementById("online").innerHTML = escapeHTML(msg.toString());
         });
+        
+        socket.emit("heyIJustJoinedGiveMeTheLatest","1");
 
+        socket.on("heyIJustJoinedGiveMeTheLatest",function(){
+          socket.emit("pubtextchange", {value: pubtext.value});
+        })
+        
         socket.on("pubtextchange", function(msg) {
           pubtext.value = msg.value;
         });
@@ -62,6 +68,15 @@
           socket.emit("pubtextchange", {value: pubtext.value});
         });
       });
+      function escapeHTML (unsafe_str) {
+        return unsafe_str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/\"/g, '&quot;')
+          .replace(/\'/g, '&#39;')
+          .replace(/\//g, '&#x2F;')
+      }
     </script>
   </body>
 </html>
