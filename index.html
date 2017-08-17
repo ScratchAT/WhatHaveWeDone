@@ -19,14 +19,18 @@
       textarea.pubtext {
         white-space: nowrap;
         text-overflow: ellipsis;
-        max-height:300px;
-	      min-width: 100%;
+        max-height: 300px;
+	min-width: 100%;
       }
 
       #online-heading {
         font-face: verdana;
         color: light-blue;
         font-size: 80%;
+      }
+	    
+      .form-control {
+	width: 100%;
       }
     </style>
   </head>
@@ -138,7 +142,7 @@
           pubtext.val(msg.value);
         });
 
-        $("#pubtext").change(function() {
+        $('#pubtext').bind('input propertychange', function() {
           socket.emit("pubtextchange", {value: pubtext.value});
         });
       });
